@@ -15,8 +15,7 @@
     "ms": "^2.1.2",
     "node-fetch": "^2.6.1",
     "opusscript": "0.0.7",
-    "pm2": "^4.5.2",
-    "prism-media": "^1.2.3",
+    "prism-media": "^1.2.2",
     "ytdl-core": "^4.0.2"
   },
   "scripts": {
