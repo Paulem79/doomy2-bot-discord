@@ -18,7 +18,7 @@
     "start": "node index.js"
   },
   "devDependencies": {},
-  "scripts": {
+  "script": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
