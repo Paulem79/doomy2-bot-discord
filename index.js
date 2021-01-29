@@ -468,50 +468,11 @@ bot.on("message", message => {
                 { name: '🧪 Expérimental :', value: "`d/sugg` | `d/calend`", inline: false },
                 { name: 'IMPORTANT :', value: "`d/setvarserv`", inline: false },
                 { name: '➕ Divers :', value: "`d/say` | `d/ticket_create` | `d/channel_close`", inline: false },
-                { name: 'Bienvenue :', value: "`d/welcomeimageon` | `d/welcomeimageoff` | `d/welcomemessageon` | `d/welcomemessageoff` | `d/mb`", inline: false }
+                { name: 'Bienvenue :', value: "`d/welcomemessageon` | `d/welcomemessageoff` | `d/mb`", inline: false }
 	        )
     message.channel.send(helpembed)
   }
 });
-
-    /****************************************************
-    ********************** Canvas ***********************
-    ****************************************************/
-const Canvas = require("canvas");
-const moment = require("moment");
-
-bot.on("guildMemberAdd", async member => {
-
-    let user = member;
-    const canvas = Canvas.createCanvas(700, 250);
-    const ctx = canvas.getContext(`2d`);
-
-    const background = await Canvas.loadImage(`./wallpaper.jpg`);
-    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-
-    ctx.font = `40px Calvert MT Std`;
-    ctx.fillStyle = `#ffffff`;
-
-    ctx.fillText(user.user.username, canvas.width / 2.2, canvas.height / 1.7);
-    ctx.fillText((user.user.bot ? '🤖' : '🙎‍♂️'), canvas.width / 1.1, canvas.height / 4.2)
-    ctx.fillText((moment(user.user.createdAt).format('DD/MM/YYYY')), canvas.width / 1.5, canvas.height / 1.05)
-
-    ctx.beginPath();
-    ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
-    ctx.closePath();
-    ctx.clip();
-    const avatar = await Canvas.loadImage(user.user.displayAvatarURL({ format: 'png' }))
-    ctx.drawImage(avatar, 25, 25, 200, 200);
-
-    const attachment = new Discord.MessageAttachment(canvas.toBuffer(), './Welcome.jpg');
-
-    if(bdd[member.guild.id]["welcomeimage"]){
-      if(bdd[member.guild.id]["welcomechannel"]){
-        bot.channels.cache.get(bdd[member.guild.id]["welcomechannel"]).send(attachment);
-      }
-    }
-});
-
 
 //****************Commande de fonction****************\\
 function Savebdd() {
