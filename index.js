@@ -437,7 +437,7 @@ bot.on("message", message => {
     .setTimestamp(new Date())
     .addFields(
 		        { name: '`d/help`', value: "permet d'afficher ce message", inline: false },
-                { name: '🔑 Modération :', value: "`d/ban` | `d/warn` | `d/kick` | `d/clear` | `d/statsbot` | `d/userinfo`", inline: false },
+                { name: '🔑 Modération :', value: "`d/ban` | `d/warn` | `d/kick` | `d/clear` | `d/statsbot` | `d/userinfo` | `d/avatar`", inline: false },
                 { name: '🧪 Expérimental :', value: "`d/sugg` | `d/calend`", inline: false },
                 { name: 'IMPORTANT :', value: "`d/setvarserv`", inline: false },
                 { name: '➕ Divers :', value: "`d/say` | `d/ticket_create` | `d/channel_close`", inline: false },
