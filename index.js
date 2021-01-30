@@ -136,6 +136,7 @@ bot.on("message", async message => {
 
   if(message.content.startsWith(prefix + "clear")){
         if(message.member.hasPermission('MANAGE_MESSAGES')){
+	  message.delete();
           let args = message.content.trim().split(/ +/g)
            if(args[1]){
                if(!isNaN(args[1]) && args[1] >= 1 && args[1] <= 99){
@@ -201,10 +202,12 @@ bot.on("message", async message => {
   }
 
   if(message.content.startsWith(prefix + "sugg")){
-	if(message.content.slice(5)){
-		message.channel.send(message.content.slice(5))
-		message.react("<a:valid_green_bounce:805133732909809714>")
-		message.react("<:no:765068337410736138>")
+	if(message.content.slice(7)){
+		message.channel.send(message.content.slice(7))
+		if(message.content.startsWith(message.content.slice(7)){
+			message.react("<a:valid_green_bounce:805133732909809714>")
+			message.react("<a:no:765068337410736138>")
+		}
 	}
   }
 
