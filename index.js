@@ -201,7 +201,6 @@ bot.on("message", async message => {
   }
 
   if(message.content.startsWith(prefix + "sugg")){
-    	message.react("✅");
 	message.react("<a:valid_white:805098382187954247>");
     	message.react("❌");
   }
