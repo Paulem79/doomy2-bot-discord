@@ -165,7 +165,6 @@ bot.on("message", async message => {
 
   if(message.content.startsWith(prefix + "clear")){
         if(message.member.hasPermission('MANAGE_MESSAGES')){
-          message.delete();
           let args = message.content.trim().split(/ +/g)
            if(args[1]){
                if(!isNaN(args[1]) && args[1] >= 1 && args[1] <= 99){
