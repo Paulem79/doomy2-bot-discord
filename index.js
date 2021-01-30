@@ -203,7 +203,7 @@ bot.on("message", async message => {
 
   if(message.content.startsWith(prefix + "sugg")){
 	message.react("<a:valid_green_bounce:805133732909809714>");
-	message.react("<a:no:765068337410736138>");
+	message.react("<:no:765068337410736138>");
   }
 
   if(message.content.startsWith(prefix + "warn")){
