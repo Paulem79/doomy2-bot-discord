@@ -197,7 +197,7 @@ bot.on("message", async message => {
   }
 
   if(message.content.startsWith("Doomy")){
-      message.channel.send("**Mon prefix sur le serveur est `prefix`**");
+      message.channel.send("**Mon prefix sur le serveur est `" + prefix + "`**");
   }
 
   if(message.content.startsWith(prefix + "sugg")){
