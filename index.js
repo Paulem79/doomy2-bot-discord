@@ -202,13 +202,8 @@ bot.on("message", async message => {
   }
 
   if(message.content.startsWith(prefix + "sugg")){
-	if(message.content.slice(7)){
-		message.channel.send(message.content.slice(7))
-		if(message.content.startsWith(message.content.slice(7)){
-			message.react("<a:valid_green_bounce:805133732909809714>")
-			message.react("<a:no:765068337410736138>")
-		}
-	}
+	message.react("<a:valid_green_bounce:805133732909809714>");
+	message.react("<a:no:765068337410736138>");
   }
 
   if(message.content.startsWith(prefix + "warn")){
