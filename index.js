@@ -196,7 +196,7 @@ bot.on("message", async message => {
     message.channel.send("Ping");
   }
 
-  if(message.content.startsWith("<@750046099091488859>")){
+  if(message.content.startsWith("Doomy")){
       message.channel.send("**Mon prefix sur le serveur est `prefix`**");
   }
 
