@@ -69,35 +69,6 @@ bot.on("message", async message => {
     }
   }
 
-  if(message.content.startsWith(prefix + "welcomeimageon")){
-    if(message.member.hasPermission("MANAGE_MESSAGES")){
-      if(bdd[message.guild.id]["welcomechannel"]){
-        if(!bdd[message.guild.id]["welcomeimage"]){
-          bdd[message.guild.id]["welcomeimage"]
-          Savebdd()
-          message.reply("L'image' de bienvenue a bien été activé :white_check_mark: (Veuillez aussi activer les messages de bienvenue avec d/welcomemessageon)");
-        }
-      } else {
-        message.reply("Veuillez activer le message de bienvenue avec d/welcomemessageon :x:");
-      }
-    } else {
-      message.reply(":x: Vous avez besoin d'avoir la permission Gérer les messages pour exécuter cette commande !");
-    }
-  }
-  if(message.content.startsWith(prefix + "welcomeimageoff")){
-    if(message.member.hasPermission("MANAGE_MESSAGES")){
-      if(bdd[message.guild.id]["welcomechannel"]){
-        if(bdd[message.guild.id]["welcomeimage"]){
-          delete bdd[message.guild.id]["welcomeimage"]
-          Savebdd()
-         message.reply("L'image' de bienvenue a bien été désactivé :white_check_mark:");
-        }
-      } else {
-        message.reply("Veuillez activer le message de bienvenue avec d/welcomemessageon :x:");
-      }
-    }
-  }
-
   if(message.content.startsWith(prefix + "userinfo")){
     if(message.mentions.users.first()){
       if(!bdd[message.guild.id]["warn"]){
@@ -191,6 +162,7 @@ bot.on("message", async message => {
 
   if(message.content.startsWith(prefix + "statsbot")){
         let totalservers = bot.guilds.cache.size;
+	let name = bot.user.tag
 
         const statsbot = new Discord.MessageEmbed()
         //On créé un Embed contenant toutes les infos du serveur
@@ -201,14 +173,15 @@ bot.on("message", async message => {
 	        .setDescription('Voici les statistiques du bot')
 	        .setThumbnail('https://media.discordapp.net/attachments/730120047607152690/743468752099737650/PicsArt_08-13-02.58.28.png?width=484&height=468')
 	        .addFields(
-            { name: 'Nombre de serveur où est le bot : ', value: totalservers, inline: true }
+           		{ name: 'Nombre de serveur où est le bot : ', value: totalservers, inline: true },
+			{ name: 'Nom : ', value: name, inline: true }
 	        )
 	        .setImage('https://media.discordapp.net/attachments/730120047607152690/743468752099737650/PicsArt_08-13-02.58.28.png?width=484&height=468')
 	        .setTimestamp()
 	        .setFooter('Par Paulem79', 'https://media.discordapp.net/attachments/730120047607152690/743468752099737650/PicsArt_08-13-02.58.28.png?width=484&height=468');
 
         message.channel.send(statsbot)
-        console.log("Serveurs totaux : " + totalservers);
+        console.log("Serveurs totaux : " + totalservers + " Nom : " + name);
   }
 
   if(message.content.startsWith("plop")){
@@ -223,13 +196,14 @@ bot.on("message", async message => {
     message.channel.send("Ping");
   }
 
-  if(message.content.startsWith("Doomy")){
-      message.channel.send("**Mon prefix sur le serveur est `d/`**")
+  if(message.content.startsWith("<@750046099091488859>")){
+      message.channel.send("**Mon prefix sur le serveur est `prefix`**");
   }
 
   if(message.content.startsWith(prefix + "sugg")){
-    message.react("✅");
-    message.react("❌");
+    	message.react("✅");
+	message.react("<a:valid_white:805098382187954247>");
+    	message.react("❌");
   }
 
   if(message.content.startsWith(prefix + "warn")){
