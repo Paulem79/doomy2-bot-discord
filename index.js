@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const { Discord, Collection } = require('discord.js');
 const bot = new Discord.Client();
 const token = require("./token.json");
 const bdd = require("./bdd.json");
