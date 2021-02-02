@@ -1,12 +1,14 @@
 const { Discord, Collection } = require('discord.js');
 const bot = new Discord.Client();
 const token = require("./token.json");
+const { prefix } = require("./config.json");
 const bdd = require("./bdd.json");
 const fs = require("fs");
 const fetch = require('node-fetch');
 const MessageEmbed = require("discord.js");
 const embed = new Discord.MessageEmbed();
-const prefix = "d/";
+
+client.prefix = prefix;
 
 //Trouver des commandes de musique
 
