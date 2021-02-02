@@ -9,6 +9,7 @@ const MessageEmbed = require("discord.js");
 const embed = new Discord.MessageEmbed();
 
 client.prefix = prefix;
+client.commands = new Collection();
 
 //Trouver des commandes de musique
 
