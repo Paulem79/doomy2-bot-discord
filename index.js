@@ -15,7 +15,8 @@ bot.commands = new Collection();
 
 console.log("Ne pas oubliez ! Si une variable stocké dans la bdd est utilisé dans une commande , ne pas oubliez de mettre le Savebdd() !");
 
-bot.on("ready", () => require("./status.js")(bot))
+bot.on("ready", () => require("./status.js")(bot));
+bot.on("message", message => require("./say.js")(client, message));
 
 //Commandes
 
