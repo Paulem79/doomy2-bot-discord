@@ -8,12 +8,14 @@ const fetch = require('node-fetch');
 const MessageEmbed = require("discord.js");
 const embed = new Discord.MessageEmbed();
 
-client.prefix = prefix;
-client.commands = new Collection();
+bot.prefix = prefix;
+bot.commands = new Collection();
 
 //Trouver des commandes de musique
 
 console.log("Ne pas oubliez ! Si une variable stocké dans la bdd est utilisé dans une commande , ne pas oubliez de mettre le Savebdd() !");
+
+bot.on("ready", () => require("./status.js")(bot))
 
 //Commandes
 
