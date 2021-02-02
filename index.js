@@ -202,8 +202,8 @@ bot.on("message", async message => {
   }
 
   if(message.content.startsWith(prefix + "sugg")){
-	message.react("<a:valid_green_bounce:805133732909809714>");
-	message.react("❌");
+	message.react("<:tick_yes:806216962745040917>");
+	message.react("<:tick_no:806218505015656474>");
   }
 
   if(message.content.startsWith(prefix + "warn")){
