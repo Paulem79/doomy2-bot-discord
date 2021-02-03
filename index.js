@@ -17,7 +17,7 @@ bot.commands = new Discord.Collection();
 console.log("Ne pas oubliez ! Si une variable stocké dans la bdd est utilisé dans une commande , ne pas oubliez de mettre le Savebdd() !");
 
 bot.on("ready", () => require("./ready.js")(bot, bdd));
-bot.on("message", message => require("./message.js")(bot, message));
+bot.on("message", message => require("./message.js")(bot, message, bdd, Savebdd));
 
 //Error
 bot.on("message", message => {
