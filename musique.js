@@ -3,7 +3,7 @@ module.exports = (bot, message) => {
 const queue = new Map();
 
   if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
+  if (!message.content.startsWith(bot.prefix)) return;
 
   const serverQueue = queue.get(message.guild.id);
 
