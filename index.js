@@ -6,7 +6,7 @@ const bdd = require("./bdd.json");
 const fs = require("fs");
 const fetch = require('node-fetch');
 const MessageEmbed = require("discord.js");
-const embed = new Discord.MessageEmbed();
+const embed = new MessageEmbed();
 
 bot.prefix = prefix;
 bot.commands = new Collection();
