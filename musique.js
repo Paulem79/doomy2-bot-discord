@@ -1,5 +1,4 @@
 module.exports = (bot, message) => {
-const ytdl = require("ytdl-core");
 
 const queue = new Map();
 
