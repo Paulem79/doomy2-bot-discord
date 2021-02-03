@@ -24,7 +24,7 @@ bot.on("message", message => {
 
   if(message.content.startsWith(prefix)){
       if(!bdd[message.guild.id]){
-        const problembddsetvar = new Discord.MessageEmbed()
+        const problembddsetvar = new MessageEmbed()
         .setColor("#d10000")
         .setTitle("`Error 01 : bdd not defined`")
         .setDescription("Veuillez activer la bdd pour utiliser les commandes avec : `" + prefix + "setvarserv` ! Si le problème persiste, veuillez contacter <@696076032133955635>")
@@ -70,7 +70,7 @@ bot.on("message", async message => {
           Savebdd()
         }
       }
-      const userinfoembed = new Discord.MessageEmbed()
+      const userinfoembed = new MessageEmbed()
       .setTitle("Info de membre :")
       .addFields(
         { name: 'ID : ', value: message.mentions.users.first().id, inline: true },
@@ -108,7 +108,7 @@ bot.on("message", async message => {
   if (message.content.startsWith(prefix + 'avatar')) {
   let user = message.mentions.users.first();
   if(!user) user = message.author;
-  const avatarembed = new Discord.MessageEmbed()
+  const avatarembed = new MessageEmbed()
     .setTitle("Voici l'avatar de cette personne !")
     .setImage(user.avatarURL())
     .setColor('#ff9900')
@@ -156,7 +156,7 @@ bot.on("message", async message => {
         let totalservers = bot.guilds.cache.size;
 	let name = bot.user.tag
 
-        const statsbot = new Discord.MessageEmbed()
+        const statsbot = new MessageEmbed()
         //On créé un Embed contenant toutes les infos du serveur
 	        .setColor('#ff9900')
 	        .setTitle('Stats du bot')
@@ -207,7 +207,7 @@ bot.on("message", async message => {
       utilisateur = message.mentions.users.first().id
       if(bdd[message.guild.id]["warn"][utilisateur] == 2){
         delete bdd[message.guild.id]["warn"][utilisateur]
-        const warnEmbed = new Discord.MessageEmbed()
+        const warnEmbed = new MessageEmbed()
         .setTitle("Ban")
         .setDescription(`Tu as été ban du serveur **${message.guild.name}** !`)
         .setColor('#ff9900')
@@ -283,7 +283,7 @@ bot.on("message", async message => {
   }
 
   if(message.content.startsWith(prefix + "calend")){
-    const dateembed = new Discord.MessageEmbed()
+    const dateembed = new .MessageEmbed()
     .setColor('#ff9900')
     .setTitle("Voici la date :")
       .setAuthor('Paulem79')
@@ -306,7 +306,7 @@ bot.on("message", async message => {
 
   if(message.content.startsWith(prefix + "statsuser")){
     if(message.mentions.users.first()){
-      const statsuser = new Discord.MessageEmbed()
+      const statsuser = new MessageEmbed()
       .setColor("#ff9900")
       .setTitle("Statistiques du membre :")
       .setAuthor("Paulem79")
@@ -419,7 +419,7 @@ bot.on("message", message => {
 //****************Commande de help****************\\
 bot.on("message", message => {
   if(message.content.startsWith(prefix + "help")){
-    const helpembed = new Discord.MessageEmbed()
+    const helpembed = new MessageEmbed()
     .setColor('#ff9900')
     .setTitle("**Doomy** Toutes les commandes")
       .setAuthor('Paulem79', 'https://media.discordapp.net/attachments/730120047607152690/743468752099737650/PicsArt_08-13-02.58.28.png?width=674&height=651')
