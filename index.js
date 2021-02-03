@@ -6,6 +6,9 @@ const { prefix } = require("./config.json");
 const bdd = require("./bdd.json");
 const fs = require("fs");
 const fetch = require('node-fetch');
+const ytdl = require("ytdl-core");
+const ffmpeg = require("ffmpeg");
+const ffmpegstatic = require("ffmpeg-static");
 const MessageEmbed = require("discord.js");
 const embed = new Discord.MessageEmbed();
 
@@ -18,7 +21,7 @@ console.log("Ne pas oubliez ! Si une variable stocké dans la bdd est utilisé d
 
 bot.on("ready", () => require("./ready.js")(bot));
 bot.on("message", message => require("./say.js")(bot, message));
-bot.on("musique", message => require("./musique.js")(bot, message));
+bot.on("message", message => require("./musique.js")(bot, message));
 
 //Error
 bot.on("message", message => {
