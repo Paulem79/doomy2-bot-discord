@@ -1,4 +1,5 @@
-const { Client, Collection } = require('discord.js');
+const Discord = require('discord.js');
+const Collection = require("discord.js")
 const bot = new Client();
 const token = require("./token.json");
 const { prefix } = require("./config.json");
@@ -6,7 +7,7 @@ const bdd = require("./bdd.json");
 const fs = require("fs");
 const fetch = require('node-fetch');
 const MessageEmbed = require("discord.js");
-const embed = new Client.MessageEmbed();
+const embed = new Discord.MessageEmbed();
 
 bot.prefix = prefix;
 bot.commands = new Collection();
@@ -24,7 +25,7 @@ bot.on("message", message => {
 
   if(message.content.startsWith(prefix)){
       if(!bdd[message.guild.id]){
-        const problembddsetvar = new Client.MessageEmbed()
+        const problembddsetvar = new Discord.MessageEmbed()
         .setColor("#d10000")
         .setTitle("`Error 01 : bdd not defined`")
         .setDescription("Veuillez activer la bdd pour utiliser les commandes avec : `" + prefix + "setvarserv` ! Si le problème persiste, veuillez contacter <@696076032133955635>")
@@ -70,7 +71,7 @@ bot.on("message", async message => {
           Savebdd()
         }
       }
-      const userinfoembed = new Client.MessageEmbed()
+      const userinfoembed = new Discord.MessageEmbed()
       .setTitle("Info de membre :")
       .addFields(
         { name: 'ID : ', value: message.mentions.users.first().id, inline: true },
@@ -108,7 +109,7 @@ bot.on("message", async message => {
   if (message.content.startsWith(prefix + 'avatar')) {
   let user = message.mentions.users.first();
   if(!user) user = message.author;
-  const avatarembed = new Client.MessageEmbed()
+  const avatarembed = new Discord.MessageEmbed()
     .setTitle("Voici l'avatar de cette personne !")
     .setImage(user.avatarURL())
     .setColor('#ff9900')
@@ -156,7 +157,7 @@ bot.on("message", async message => {
         let totalservers = bot.guilds.cache.size;
 	let name = bot.user.tag
 
-        const statsbot = new Client.MessageEmbed()
+        const statsbot = new Discord.MessageEmbed()
         //On créé un Embed contenant toutes les infos du serveur
 	        .setColor('#ff9900')
 	        .setTitle('Stats du bot')
@@ -283,7 +284,7 @@ bot.on("message", async message => {
   }
 
   if(message.content.startsWith(prefix + "calend")){
-    const dateembed = new Client.MessageEmbed()
+    const dateembed = new Discord.MessageEmbed()
     .setColor('#ff9900')
     .setTitle("Voici la date :")
       .setAuthor('Paulem79')
@@ -297,7 +298,7 @@ bot.on("message", async message => {
   if(message.content.startsWith(prefix + "ping")){
     message.channel.send("Pinging...").then(m =>{
       var ping = m.createdTimestamp - message.createdTimestamp;
-      var embed = new Client.MessageEmbed()
+      var embed = new Discord.MessageEmbed()
       .setAuthor(`Pong ! le ping est de ${ping}`)
       .setColor('#ff9900')
       m.edit(embed)
@@ -306,7 +307,7 @@ bot.on("message", async message => {
 
   if(message.content.startsWith(prefix + "statsuser")){
     if(message.mentions.users.first()){
-      const statsuser = new Client.MessageEmbed()
+      const statsuser = new Discord.MessageEmbed()
       .setColor("#ff9900")
       .setTitle("Statistiques du membre :")
       .setAuthor("Paulem79")
@@ -419,7 +420,7 @@ bot.on("message", message => {
 //****************Commande de help****************\\
 bot.on("message", message => {
   if(message.content.startsWith(prefix + "help")){
-    const helpembed = new Client.MessageEmbed()
+    const helpembed = new Discord.MessageEmbed()
     .setColor('#ff9900')
     .setTitle("**Doomy** Toutes les commandes")
       .setAuthor('Paulem79', 'https://media.discordapp.net/attachments/730120047607152690/743468752099737650/PicsArt_08-13-02.58.28.png?width=674&height=651')
