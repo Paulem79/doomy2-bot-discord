@@ -3,23 +3,21 @@ const ytdl = require("ytdl-core");
 
 const queue = new Map();
 
-bot.on("message", async message => {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
 
   const serverQueue = queue.get(message.guild.id);
 
-  if (message.content.startsWith(`${prefix}play`)) {
+  if (message.content.startsWith(bot.prefix + `play`)) {
     execute(message, serverQueue);
     return;
-  } else if (message.content.startsWith(`${prefix}skip`)) {
+  } else if (message.content.startsWith(bot.prefix + `skip`)) {
     skip(message, serverQueue);
     return;
-  } else if (message.content.startsWith(`${prefix}stop`)) {
+  } else if (message.content.startsWith(bot.prefix + `stop`)) {
     stop(message, serverQueue);
     return;
   }
-});
 
 async function execute(message, serverQueue) {
   const args = message.content.split(" ");
