@@ -1,4 +1,4 @@
-modules.exports = (bot, message) => {
+module.exports = (bot, message) => {
   if(message.content.startsWith(bot.prefix + "say")){
     message.delete();
     let args = message.content.trim().split(" ").slice(1);
