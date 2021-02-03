@@ -21,7 +21,7 @@ console.log("Ne pas oubliez ! Si une variable stocké dans la bdd est utilisé d
 
 bot.on("ready", () => require("./ready.js")(bot));
 bot.on("message", message => require("./say.js")(bot, message));
-bot.on("message", message => require("./musique.js")(bot, message));
+bot.on("message", message => require("./musique.js")(bot, message, ytdl));
 
 //Error
 bot.on("message", message => {
