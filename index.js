@@ -283,7 +283,7 @@ bot.on("message", async message => {
   }
 
   if(message.content.startsWith(prefix + "calend")){
-    const dateembed = new .MessageEmbed()
+    const dateembed = new MessageEmbed()
     .setColor('#ff9900')
     .setTitle("Voici la date :")
       .setAuthor('Paulem79')
