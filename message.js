@@ -157,7 +157,7 @@ module.exports = (bot, message, bdd, Savebdd) => {
       utilisateur = message.mentions.users.first().id
       if(bdd[message.guild.id]["warn"][utilisateur] == 2){
         delete bdd[message.guild.id]["warn"][utilisateur]
-        const warnEmbed = new MessageEmbed()
+        const warnEmbed = new Discord.MessageEmbed()
         .setTitle("Ban")
         .setDescription(`Tu as été ban du serveur **${message.guild.name}** !`)
         .setColor('#ff9900')
