@@ -1,4 +1,4 @@
-module.exports = (bot, message) => {
+module.exports = (bot, message, ytdl) => {
 
 const queue = new Map();
 
