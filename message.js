@@ -1,4 +1,4 @@
-module.exports = (bot, message, bdd) => {
+module.exports = (bot, message, bdd, Savebdd) => {
   if(message.content.startsWith(bot.prefix + "premiumdoomy2private")){
     message.delete()
     if(!bdd[message.guild.id]["premium"]){
