@@ -89,8 +89,8 @@ bot.on("message", message => {
             }]
           }).then(channel_ticket => {
             channel_ticket.send(`**:white_check_mark: Ticket créé ! ${user}**`);
-            channel_ticket.send("Ce membre a besoin d'aide @everyone");
-            channel_ticket.send("Supprimer le ticket : " + prefix + "channel_close");
+            channel_ticket.send("Ce membre a besoin d'aide !");
+            channel_ticket.send("Supprimer le ticket : " + prefix + "channel_close [Nom du salon]");
           })
         }
       })
@@ -105,7 +105,7 @@ bot.on("message", message => {
         message.mentions.channels.first().delete()
         message.reply("Le salon <#" + message.mentions.channels.first().id + "> a bien été supprimé :white_check_mark:")
       } else {
-        message.channel.delete();
+	message.channel.send("Veuillez mentionner un salon !");
       }
     } else {
       message.reply("Vous n'avez pas les permissions nécessaires !");
