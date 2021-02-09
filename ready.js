@@ -5,5 +5,5 @@ module.exports = (bot, bdd) => {
   setInterval(function() {
       let stats = statuts[Math.floor(Math.random()*statuts.length)];
       bot.user.setActivity(stats, {type: "PLAYING"})
-  }, 6000)
+  }, 7000)
 }
