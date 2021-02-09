@@ -129,7 +129,8 @@ bot.on("message", message => {
                 { name: '🧪 Expérimental :', value: "`d/sugg` | `d/calend`", inline: false },
                 { name: 'IMPORTANT :', value: "`d/setvarserv`", inline: false },
                 { name: '➕ Divers :', value: "`d/say` | `d/ticket_create` | `d/channel_close`", inline: false },
-                { name: 'Bienvenue :', value: "`d/welcomemessageon` | `d/welcomemessageoff` | `d/mb`", inline: false }
+                { name: 'Bienvenue :', value: "`d/welcomemessageon` | `d/welcomemessageoff` | `d/mb`", inline: false },
+	    	{ name: 'Communauté :', value: "Support : discord.gg/unJJFQspHd | Serveur de PauLem79 : https://discord.gg/cpdQhk3Q", inline: false }
 	        )
     message.channel.send(helpembed)
   }
