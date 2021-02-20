@@ -110,17 +110,15 @@ module.exports = (bot, message, bdd, Savebdd, Discord) => {
         //On créé un Embed contenant toutes les infos du serveur
 	        .setColor('#ff9900')
 	        .setTitle('Stats du bot')
-            .setAuthor('Paulem79', 'https://media.discordapp.net/attachments/730120047607152690/743468752099737650/PicsArt_08-13-02.58.28.png?width=484&height=468')
+            .setAuthor('Paulem79')
             .setURL('https://www.youtube.com/channel/UC_6kI0gHuyWZxrJ0fBj_kiQ?view_as=subscriber')
 	        .setDescription('Voici les statistiques du bot')
-	        .setThumbnail('https://media.discordapp.net/attachments/730120047607152690/743468752099737650/PicsArt_08-13-02.58.28.png?width=484&height=468')
 	        .addFields(
            		{ name: 'Nombre de serveur où est le bot : ', value: totalservers, inline: true },
 			{ name: 'Nom : ', value: name, inline: true }
 	        )
-	        .setImage('https://media.discordapp.net/attachments/730120047607152690/743468752099737650/PicsArt_08-13-02.58.28.png?width=484&height=468')
 	        .setTimestamp()
-	        .setFooter('Par Paulem79', 'https://media.discordapp.net/attachments/730120047607152690/743468752099737650/PicsArt_08-13-02.58.28.png?width=484&height=468');
+	        .setFooter('Par Paulem79');
 
         message.channel.send(statsbot)
         console.log("Serveurs totaux : " + totalservers + " Nom : " + name);
