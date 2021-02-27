@@ -1,11 +1,10 @@
 // shard.js
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const prefix = 'da/';
 
 client.on('message', message => {
 
-	if (message.content.startsWith(bot.prefix + ("stats"))) {
+	if (message.content.startsWith(bot.prefix + "stats")) {
 		const promises = [
 	    client.shard.fetchClientValues('guilds.cache.size'),
 	    client.shard.broadcastEval('this.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)'),
