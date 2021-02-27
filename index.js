@@ -18,6 +18,7 @@ console.log("Ne pas oubliez ! Si une variable stocké dans la bdd est utilisé d
 
 bot.on("ready", () => require("./ready.js")(bot, bdd));
 bot.on("message", message => require("./message.js")(bot, message, bdd, Savebdd, Discord));
+bot.on("shard", message => require("./shard.js")(bot, message));
 
 //Error
 bot.on("message", message => {
