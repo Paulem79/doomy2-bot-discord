@@ -1,8 +1,6 @@
 // shard.js
-const Discord = require("discord.js");
-const client = new Discord.Client();
 
-client.on('message', message => {
+module.exports = (bot, message) => {
 
 	if (message.content.startsWith(bot.prefix + "stats")) {
 		const promises = [
@@ -18,7 +16,7 @@ client.on('message', message => {
 	  })
 	  .catch(console.error);
 	}
-});
+}
 
 client.shard.fetchClientValues('guilds.cache.size')
 	.then(results => {
