@@ -144,4 +144,4 @@ function Savebdd() {
     });
 }
 
-bot.login(token.token);
+bot.login(process.env.token.token);
